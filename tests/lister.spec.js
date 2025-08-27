@@ -20,10 +20,11 @@ test('lister page', async ({page})=>{
 
  await propertyImages.uploadRandomCoverImage();
  await propertyImages.uploadRandomInteriorImages();
+ await propertyFields.uploadPDF("lumina rayale.pdf")
 
-
- await propertyFields.enterpropertyTitle("Beautiful Beachfront Villa");
- await propertyFields.enterpropertyDescription("Experience luxury living in this stunning beachfront villa with breathtaking ocean views.");
+//Usage of faker
+ await propertyFields.enterpropertyTitle();
+ await propertyFields.enterpropertyDescription();
  await propertyFields.enterpropertyprice("500");
  await propertyFields.entergrossrent("100")
  await propertyFields.enterpropertyshares("100");
@@ -32,9 +33,21 @@ test('lister page', async ({page})=>{
  await propertyFields.enterpropertyinsurancefee("15");
  await propertyFields.enterpropertytokensupply("1000");
  await propertyFields.enterpropertycapitalappreciation("10");
-//  await propertyFields.selectPropertyStartDate("27-08-2025");
+ await propertyFields.selectPropertyStartDate();
+ await propertyFields.selectPropertyEndDate();
+ await propertyFields.enterpropertyselectType("space");
+//  await propertyFields.enterpropertyLocation("Dub");
+// await propertyFields.selectFirstSuggestion("Dubai")
+ await propertyFields.enteraboutProperty();
+ await propertyFields.enterpropertyammunity();
+ await propertyFields.clickSubmitButton();
+ 
+
+
+
 //  await propertyFields.selectPropertyEndDate("27-09-2025");
 
- await page.waitForTimeout(3000)
+
+ await page.waitForTimeout(2000)
 
 })
